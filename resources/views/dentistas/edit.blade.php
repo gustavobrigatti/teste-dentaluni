@@ -100,7 +100,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="departamentos">Especialidades</label>
+                            <label for="especialidades">Especialidades</label>
                             <select class="js-example-basic-multiple form-control custom-select-lg" name="especialidades[]" id="especialidades" multiple="multiple">
                                 <option></option>
                                 @foreach($especialidades as $especialidade)

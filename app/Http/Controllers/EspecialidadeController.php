@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Dentista;
 use App\Models\Especialidade;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,11 @@ class EspecialidadeController extends Controller
 
     public function edit($id){
         $especialidade =   $id > 0 ? Especialidade::findOrFail($id):new Especialidade();
+        $dentistas = Dentista::orderBy('name')->get();
         return view('especialidades.edit', [
             'id' => $id,
-            'especialidade' => $especialidade
+            'especialidade' => $especialidade,
+            'dentistas' => $dentistas
         ]);
     }
 
@@ -27,6 +30,7 @@ class EspecialidadeController extends Controller
         ]);
         $especialidade->fill($request->input());
         $especialidade->save();
+        $especialidade->dentistas()->sync($request->dentistas);
     }
 
     public function store(Request $request){

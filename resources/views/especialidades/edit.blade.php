@@ -1,4 +1,12 @@
 @extends('app')
+@push('scripts')
+    <script type="text/javascript">
+        $('#dentistas').select2({
+            placeholder: 'Selecione as especialidades',
+            width: '100%'
+        });
+    </script>
+@endpush
 @section('content')
     <!-- [ breadcrumb ] start -->
     <div class="page-header">
@@ -41,6 +49,15 @@
                         <div class="form-group">
                             <label for="nome">Nome</label>
                             <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da especialidade" value="{{ old('nome', $especialidade->nome) }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="dentistas">Dentistas</label>
+                            <select class="js-example-basic-multiple form-control custom-select-lg" name="dentistas[]" id="dentistas" multiple="multiple">
+                                <option></option>
+                                @foreach($dentistas as $dentista)
+                                    <option value="{{ $dentista->id }}" @if($especialidade->dentistas->contains($dentista->id)) selected @endif>{{ $dentista->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         @if($id == 0)
                             <button type="submit" id="btn-in" class="btn btn-primary btn-sm-block">Salvar</button>
