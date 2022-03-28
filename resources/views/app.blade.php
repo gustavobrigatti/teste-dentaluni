@@ -108,7 +108,10 @@
                     <label>Navegação</label>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('dentistas.index') }}" class="nav-link"><span class="pcoded-micon"><i class="fas fa-barcode"></i></span><span class="pcoded-mtext">Produtos</span></a>
+                    <a href="{{ route('dentistas.index') }}" class="nav-link"><span class="pcoded-micon"><i class="fas fa-users"></i></span><span class="pcoded-mtext">Dentistas</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('especialidades.index') }}" class="nav-link"><span class="pcoded-micon"><i class="fas fa-book-reader"></i></span><span class="pcoded-mtext">Especialidades</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="https://www.linkedin.com/in/gustavo-rosolen-brigatti/" target="_blank" class="nav-link"><span class="pcoded-micon"><i class="fab fa-linkedin"></i></span><span class="pcoded-mtext">LinkedIn</span></a>

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 class DentistaController extends Controller
 {
     public function index(){
-
+        return view('app');
     }
 
     public function edit($id){
