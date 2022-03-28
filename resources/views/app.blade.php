@@ -252,7 +252,8 @@
         $('#simpletable').DataTable( {
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json"
-            }
+            },
+            "pageLength": 5
         } );
     } );
     $(function(){
